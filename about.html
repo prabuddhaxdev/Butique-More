@@ -8,19 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F8F5EF',
+                        beige: '#DFCCB7',
+                        ivory: '#FFFDF8',
+                        rosegold: '#A55D67',
+                        blush: '#EAD0D0',
+                        sage: '#8B8560',
+                        offwhite: '#FAF8F5',
+                        textmain: '#1A1A1A',
+                        textlight: '#555555'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 <body>
 
     <!-- Navigation -->
     <nav id="navbar" class="navbar scrolled">
-        <div class="nav-container">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
             <a href="index.html" class="brand-logo">Butique & more</a>
-            <div class="nav-links">
+            <div class="nav-links flex flex-col md:flex-row items-center gap-6 md:gap-10">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">The Artist</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
-                <a href="custom-order.html" class="btn-outline">Inquire</a>
+                <a href="custom-order.html" class="btn-outline inline-block text-center">Inquire</a>
             </div>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -30,18 +57,19 @@
 
     <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-center reveal-up">
+        <div class="max-w-7xl mx-auto px-6 w-full text-center reveal-up">
             <span class="eyebrow">Her Journey</span>
             <h1>About The Artist</h1>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' fill='none' stroke='%23A55D67' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10,10 Q30,-5 50,10 T90,10' /%3E%3C/svg%3E" class="accent-flourish reveal-up" alt="">
             <p class="section-subtitle">Discover the story, the passion, and the delicate hands that bring your visions to life.</p>
         </div>
     </header>
 
     <!-- Artist Story -->
-    <section class="section-padding">
-        <div class="container split-layout">
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div class="about-image reveal-left">
-                <img src="public/1.jpeg" alt="My mother painting in her studio" loading="lazy" style="border-radius: var(--radius-lg);">
+                <img src="public/5.jpeg" alt="My mother painting in her studio" loading="lazy" style="border-radius: var(--radius-lg);">
                 <div class="img-accent"></div>
             </div>
             <div class="about-content reveal-right">
@@ -49,7 +77,7 @@
                 <p>Art has always been more than just a hobby for my mother—it's her language, her sanctuary, and her way of bringing beauty into the world. Her journey with hand-painting fabrics began decades ago, driven by a deep appreciation for the rich textures of silk and cotton and a desire to create something truly unique.</p>
                 <p>Unlike mass-produced garments, every single piece she creates carries a piece of her soul. She spends hours sketching concepts, blending colors perfectly, and carefully applying each brushstroke to ensure the final piece isn't just clothing, but an heirloom.</p>
                 <p>For her, true luxury isn't about a brand name; it's about the time, love, and meticulous attention to detail poured into a handcrafted piece. When you order from us, you aren't just buying a dress or a painting—you are commissioning a piece of her life's work.</p>
-                
+
                 <div class="signature">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Signature_of_John_Hancock.svg" alt="Signature" class="sig-img" style="filter: opacity(0.6);">
                 </div>
@@ -58,11 +86,11 @@
     </section>
 
     <!-- Behind the Scenes Grid -->
-    <section class="section-padding bg-light">
-        <div class="container text-center">
+    <section class="py-16 md:py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-6 w-full text-center">
             <h2 class="section-title reveal-up">In The Studio</h2>
             <p class="section-subtitle reveal-up">A glimpse into her creative sanctuary.</p>
-            
+
             <div class="masonry-grid">
                 <div class="gallery-item reveal-up">
                     <img src="public/2.jpeg" alt="Sketching" loading="lazy">
@@ -79,7 +107,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-grid">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div class="footer-brand">
                 <h2>Butique & more</h2>
                 <p>Creating one-of-a-kind, hand-painted masterpieces that celebrate artistry and individuality.</p>

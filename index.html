@@ -13,19 +13,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F8F5EF',
+                        beige: '#DFCCB7',
+                        ivory: '#FFFDF8',
+                        rosegold: '#A55D67',
+                        blush: '#EAD0D0',
+                        sage: '#8B8560',
+                        offwhite: '#FAF8F5',
+                        textmain: '#1A1A1A',
+                        textlight: '#555555'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 <body>
 
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
-        <div class="nav-container">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
             <a href="index.html" class="brand-logo">Butique & more</a>
-            <div class="nav-links">
+            <div class="nav-links flex flex-col md:flex-row items-center gap-6 md:gap-10">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">The Artist</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
-                <a href="custom-order.html" class="btn-outline">Inquire</a>
+                <a href="custom-order.html" class="btn-outline inline-block text-center">Inquire</a>
             </div>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -39,13 +66,13 @@
             <img src="public/11.jpeg" alt="Hand painted silk fabric">
             <div class="hero-overlay"></div>
         </div>
-        <div class="hero-content reveal-up">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 w-full reveal-up">
             <span class="eyebrow">Exquisite Craftsmanship</span>
             <h1>Hand-Painted Custom Dresses Made Just for You</h1>
             <p class="subheadline">Every saree, kurti, portrait, and dress is handcrafted with love and created exclusively for you.</p>
-            <div class="hero-buttons">
-                <a href="custom-order.html" class="btn-primary">Request a Custom Order</a>
-                <a href="#collections" class="btn-secondary">View Services</a>
+            <div class="hero-buttons flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <a href="custom-order.html" class="btn-primary inline-block text-center">Request a Custom Order</a>
+                <a href="#collections" class="btn-secondary inline-block text-center">View Services</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -55,14 +82,15 @@
     </header>
 
     <!-- Feature Categories Section -->
-    <section id="collections" class="categories-section section-padding">
-        <div class="container">
+    <section id="collections" class="categories-section py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="section-header text-center reveal-up">
                 <h2 class="section-title">What We Offer</h2>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' fill='none' stroke='%23A55D67' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10,10 Q30,-5 50,10 T90,10' /%3E%3C/svg%3E" class="accent-flourish reveal-up" alt="">
                 <p class="section-subtitle">Discover our range of handcrafted masterpieces. Click to view custom options.</p>
             </div>
             
-            <div class="grid-layout">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 <!-- Card 1 -->
                 <div class="category-card reveal-up">
                     <a href="service-sarees.html">
@@ -146,10 +174,11 @@
     </section>
 
     <!-- How It Works (Timeline) -->
-    <section class="timeline-section section-padding">
-        <div class="container">
+    <section class="timeline-section py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="section-header text-center reveal-up">
                 <h2 class="section-title">How It Works</h2>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' fill='none' stroke='%23A55D67' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10,10 Q30,-5 50,10 T90,10' /%3E%3C/svg%3E" class="accent-flourish reveal-up" alt="">
                 <p class="section-subtitle">A simple 4-step process to create your custom masterpiece.</p>
             </div>
             
@@ -188,8 +217,8 @@
     </section>
 
     <!-- About Preview -->
-    <section class="about-section section-padding bg-light">
-        <div class="container split-layout">
+    <section class="about-section py-16 md:py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div class="about-image reveal-left">
                 <img src="public/5.jpeg" alt="Artist painting" loading="lazy">
                 <div class="img-accent"></div>
@@ -197,15 +226,16 @@
             <div class="about-content reveal-right">
                 <span class="eyebrow">Meet The Artist</span>
                 <h2 class="section-title">Crafted by a Mother's Hands</h2>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' fill='none' stroke='%23A55D67' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10,10 Q30,-5 50,10 T90,10' /%3E%3C/svg%3E" class="accent-flourish reveal-up" alt="">
                 <p>Behind every exquisite brushstroke is my mother's dedication to her art. With years of experience and an unyielding passion for colors and fabrics, she transforms ordinary clothing into wearable masterpieces.</p>
-                <a href="about.html" class="btn-primary" style="margin-top: 1rem;">Read Her Story</a>
+                <a href="about.html" class="btn-primary inline-block text-center" style="margin-top: 1rem;">Read Her Story</a>
             </div>
         </div>
     </section>
 
     <!-- Gallery Preview -->
-    <section class="gallery-preview section-padding">
-        <div class="container text-center">
+    <section class="gallery-preview py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 w-full text-center">
             <h2 class="section-title reveal-up">Past Custom Orders</h2>
             <p class="section-subtitle reveal-up">A glimpse into the unique pieces we've created for our clients.</p>
             
@@ -225,8 +255,8 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials-section section-padding bg-light">
-        <div class="container text-center">
+    <section class="testimonials-section py-16 md:py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-6 w-full text-center">
             <i class="fas fa-quote-right quote-icon reveal-up"></i>
             <h2 class="section-title reveal-up">Client Stories</h2>
             
@@ -241,7 +271,7 @@
 
     <!-- CTA Strip -->
     <section class="cta-strip text-center reveal-up">
-        <div class="container">
+        <div class="max-w-7xl mx-auto px-6 w-full">
             <h2>Ready to create your custom outfit?</h2>
             <a href="custom-order.html" class="btn-primary mt-4">Start Your Custom Order</a>
         </div>
@@ -249,7 +279,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-grid">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div class="footer-brand">
                 <h2>Butique & more</h2>
                 <p>Creating one-of-a-kind, hand-painted masterpieces that celebrate artistry and individuality.</p>
@@ -271,7 +301,7 @@
             </div>
             <div class="footer-social">
                 <h4>Connect</h4>
-                <div class="social-icons">
+                <div class="social-icons flex gap-4">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-pinterest"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
