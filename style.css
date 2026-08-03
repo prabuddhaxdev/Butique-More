@@ -50,6 +50,28 @@ body {
 }
 
 /* ==========================================================================
+   Navbar brand wordmark — visually weightier on white backgrounds
+   ========================================================================== */
+.navbar .font-serif[href="index.html"] {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  /* layered text-shadow gives a subtle stroke-like thickening
+     without requiring a heavier font weight */
+  text-shadow:
+    0.5px 0 0 currentColor,
+    -0.5px 0 0 currentColor,
+    0 0.5px 0 currentColor,
+    0 -0.5px 0 currentColor;
+}
+
+@media (min-width: 640px) {
+  .navbar .font-serif[href="index.html"] {
+    font-size: 1.65rem;
+  }
+}
+
+/* ==========================================================================
    Navbar link styling — premium gold underline treatment
    ========================================================================== */
 .nav-link {
@@ -57,7 +79,7 @@ body {
   font-weight: 500;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
-  color: var(--clr-text-light);
+  color: #1a1a1a;
   transition: color 0.3s ease;
   padding-bottom: 4px;
 }
@@ -98,42 +120,30 @@ body {
   width: 100%;
 }
 
-/* CTA-style "Inquire" link in nav */
+/* CTA-style "Inquire" link in nav — solid dark resting state for importance */
 .nav-cta {
   display: inline-block;
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 1.6rem;
   border-radius: 9999px;
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--clr-gold-dark);
-  border: 1px solid var(--clr-gold);
-  background: transparent;
-  transition: all 0.3s ease;
+  color: #fffdf8;
+  background: #1a1a1a;
+  border: 1.5px solid #1a1a1a;
+  box-shadow: 0 4px 14px rgba(26, 26, 26, 0.18);
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.nav-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-gold-dark) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
 }
 
 .nav-cta:hover {
-  color: #fff;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-gold-dark) 100%);
   border-color: var(--clr-gold-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201, 161, 74, 0.3);
-}
-
-.nav-cta:hover::before {
-  opacity: 1;
+  box-shadow: 0 6px 20px rgba(168, 134, 47, 0.45);
 }
 
 /* ==========================================================================
