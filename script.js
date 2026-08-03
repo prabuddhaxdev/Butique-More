@@ -65,32 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
+    if (filterBtns.length && galleryItems.length) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
 
-            const filterValue = btn.getAttribute('data-filter');
+                const filterValue = btn.getAttribute('data-filter');
 
-            galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 400); // match transition duration
-                }
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400); // match transition duration
+                    }
+                });
             });
         });
-    });
+    }
 
     /* ==========================================================================
        Lightbox for Gallery
@@ -100,67 +102,137 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeLightbox = document.querySelector('.close-lightbox');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgUrl = item.querySelector('img').src;
-            const text = item.querySelector('.overlay-text').innerText;
-            
-            lightboxImg.src = imgUrl;
-            lightboxCaption.innerText = text;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // prevent scrolling
+    if (lightbox && lightboxImg && lightboxCaption && closeLightbox && galleryItems.length) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgUrl = item.querySelector('img').src;
+                const text = item.querySelector('.overlay-text').innerText;
+
+                lightboxImg.src = imgUrl;
+                lightboxCaption.innerText = text;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // prevent scrolling
+            });
         });
-    });
 
-    closeLightbox.addEventListener('click', closeLightboxFunc);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightboxFunc();
-    });
+        closeLightbox.addEventListener('click', closeLightboxFunc);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightboxFunc();
+        });
 
-    function closeLightboxFunc() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        function closeLightboxFunc() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     }
 
     /* ==========================================================================
-       Testimonial Carousel (Simple Implementation)
+       Testimonial Carousel (Auto-sliding with dots + arrows)
        ========================================================================== */
-    const testimonials = [
-        {
-            quote: "\"The saree I ordered for my wedding was breathtaking. The attention to detail in the hand-painted lotuses made me feel like royalty. A true masterpiece.\"",
-            name: "Priya S."
-        },
-        {
-            quote: "\"I commissioned a portrait of my parents for their anniversary. The emotion captured in the watercolors brought them to tears. Exceptional talent.\"",
-            name: "Michael R."
-        },
-        {
-            quote: "\"My custom kurti is now my favorite piece of clothing. It's not just a garment; it's a piece of wearable art. The fabric quality is also superb.\"",
-            name: "Aisha K."
+    const carouselEl = document.querySelector('.testimonial-carousel');
+    const track = document.querySelector('.testimonial-track');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+
+    if (carouselEl && track && dotsContainer) {
+        const slides = track.querySelectorAll('.testimonial-slide');
+        const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+        const total = slides.length;
+
+        let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
+        if (current < 0) current = 0;
+
+        let autoTimer = null;
+        const AUTO_DELAY = 6000;
+
+        function goTo(index, fromUser = false) {
+            const next = (index + total) % total;
+            if (next === current) return;
+
+            slides[current].classList.remove('active');
+            if (dots[current]) {
+                dots[current].classList.remove('active');
+                dots[current].setAttribute('aria-selected', 'false');
+            }
+
+            current = next;
+
+            slides[current].classList.add('active');
+            if (dots[current]) {
+                dots[current].classList.add('active');
+                dots[current].setAttribute('aria-selected', 'true');
+            }
+
+            if (fromUser) restartAuto();
         }
-    ];
 
-    let currentTestimonial = 0;
-    const carouselContainer = document.querySelector('.testimonial-carousel');
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1, true); }
 
-    function createTestimonialHTML(index) {
-        return `
-            <div class="testimonial-slide active">
-                <p class="quote-text">${testimonials[index].quote}</p>
-                <h5 class="client-name">${testimonials[index].name}</h5>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-            </div>
-        `;
-    }
+        function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(next, AUTO_DELAY);
+        }
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+        }
+        function restartAuto() {
+            stopAuto();
+            startAuto();
+        }
 
-    // Auto rotate testimonials
-    if(carouselContainer) {
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            carouselContainer.innerHTML = createTestimonialHTML(currentTestimonial);
-        }, 6000);
+        // Pause on hover
+        carouselEl.addEventListener('mouseenter', stopAuto);
+        carouselEl.addEventListener('mouseleave', startAuto);
+
+        // Pause when off-screen, resume when visible
+        if ('IntersectionObserver' in window) {
+            const visibilityObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) startAuto();
+                    else stopAuto();
+                });
+            }, { threshold: 0.1 });
+            visibilityObserver.observe(carouselEl);
+        }
+
+        // Start auto-rotation immediately
+        startAuto();
+
+        // Arrow buttons
+        if (prevBtn) prevBtn.addEventListener('click', prev);
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1, true));
+
+        // Dots
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => goTo(i, true));
+        });
+
+        // Keyboard support
+        carouselEl.setAttribute('tabindex', '0');
+        carouselEl.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prev();
+            else if (e.key === 'ArrowRight') goTo(current + 1, true);
+        });
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) goTo(current + 1, true);
+                else prev();
+            }
+        }, { passive: true });
     }
 
     /* ==========================================================================

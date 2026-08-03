@@ -560,27 +560,191 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-16 md:py-24 bg-cream">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full text-center">
-        <i
-          class="fas fa-quote-right text-4xl text-beige mb-6 block reveal-up"
-        ></i>
-        <h2
-          class="text-2xl sm:text-4xl md:text-5xl font-serif text-textmain mb-10 sm:mb-12 reveal-up"
-        >
-          Client Stories
-        </h2>
+    <section class="py-16 md:py-24 bg-cream overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full">
+        <div class="text-center reveal-up">
+          <i class="fas fa-quote-right text-4xl text-beige mb-6 block"></i>
+          <span
+            class="block text-[0.75rem] sm:text-[0.85rem] tracking-[3px] sm:tracking-[4px] uppercase text-rosegold font-semibold mb-2"
+            >Voices of Our Clients</span
+          >
+          <h2
+            class="text-2xl sm:text-4xl md:text-5xl font-serif text-textmain mb-4"
+          >
+            Client Stories
+          </h2>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' fill='none' stroke='%23A55D67' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10,10 Q30,-5 50,10 T90,10' /%3E%3C/svg%3E"
+            class="mx-auto w-16 opacity-80 mb-6"
+            alt=""
+          />
+          <p class="font-serif italic text-base sm:text-lg text-textlight max-w-xl mx-auto mb-10 sm:mb-12 px-2 sm:px-0">
+            Honest words from the people who wore our art.
+          </p>
+        </div>
 
-        <div class="testimonial-carousel max-w-3xl mx-auto reveal-up">
-          <div class="testimonial-slide active">
-            <p class="text-lg sm:text-xl md:text-2xl font-serif italic text-textmain mb-6 px-2 sm:px-0">
-              "The saree I ordered for my wedding was breathtaking. The
-              attention to detail in the hand-painted lotuses made me feel like
-              royalty. A true masterpiece."
-            </p>
-            <h5 class="font-sans font-semibold text-lg text-textmain">
-              Priya S.
-            </h5>
+        <div class="testimonial-carousel relative max-w-4xl mx-auto">
+          <!-- Prev / Next Arrows -->
+          <button
+            type="button"
+            class="testimonial-arrow testimonial-prev absolute top-1/2 -translate-y-1/2 left-0 sm:-left-2 md:-left-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-beige text-rosegold shadow-md flex items-center justify-center hover:bg-rosegold hover:text-white hover:border-rosegold transition-all duration-300 z-10"
+            aria-label="Previous story"
+          >
+            <i class="fas fa-chevron-left text-sm"></i>
+          </button>
+          <button
+            type="button"
+            class="testimonial-arrow testimonial-next absolute top-1/2 -translate-y-1/2 right-0 sm:-right-2 md:-right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-beige text-rosegold shadow-md flex items-center justify-center hover:bg-rosegold hover:text-white hover:border-rosegold transition-all duration-300 z-10"
+            aria-label="Next story"
+          >
+            <i class="fas fa-chevron-right text-sm"></i>
+          </button>
+
+          <!-- Slides Track -->
+          <div class="testimonial-track">
+            <article class="testimonial-slide active">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;The saree I ordered for my wedding was breathtaking. The attention to detail in the hand-painted lotuses made me feel like royalty. A true masterpiece.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">P</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Priya S.</h5>
+                    <span class="testimonial-role">Bride &middot; Kolkata</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;I commissioned a portrait of my parents for their anniversary. The emotion captured in the watercolors brought them to tears. Exceptional talent and a beautiful soul behind the brush.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">A</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Ashmit Banerjee</h5>
+                    <span class="testimonial-role">Son &middot; Odisha</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;My custom kurti is now my favorite piece of clothing. It&rsquo;s not just a garment; it&rsquo;s a piece of wearable art. The fabric quality is also superb.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">P</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Preeti Rani</h5>
+                    <span class="testimonial-role">Designer &middot; Bihar</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;I gifted my wife a hand-painted saree for our 10th anniversary. She cried opening it. Every motif told a chapter of our story. Thank you for the magic.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">R</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Rahul &amp; Neha M.</h5>
+                    <span class="testimonial-role">Anniversary Gift &middot; Delhi</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;Ordered matching mother&ndash;daughter kurtis for a family wedding. The custom peacocks, the colors, the fit &mdash; everything was perfect. We&rsquo;ve been flooded with compliments.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">S</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Sushmita Ghosh</h5>
+                    <span class="testimonial-role">Mother of Two &middot; Bengaluru</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;The Punjabi suit I commissioned for Diwali was stunning. It felt like wearing a piece of our heritage &mdash; only better, because it was painted just for me.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">S</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Sayan Ghosh</h5>
+                    <span class="testimonial-role">School Teacher &middot; Kolkata</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;My daughter&rsquo;s baby dress was a dream &mdash; soft pastels, tiny hand-painted roses, and finished with so much love. She wore it on her first Diwali and we have the photos forever.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">A</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Ananya V.</h5>
+                    <span class="testimonial-role">New Mom &middot; Pune</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-quote">&ldquo;I run a small boutique and the artist helped me create a limited collection of hand-painted scarves. Every single piece sold within a week. We&rsquo;re now planning winter together.&rdquo;</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">T</div>
+                  <div class="text-left">
+                    <h5 class="testimonial-name">Tisha D.</h5>
+                    <span class="testimonial-role">Boutique Owner &middot; Goa</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Dots -->
+          <div
+            class="testimonial-dots flex justify-center items-center gap-2.5 mt-8"
+            role="tablist"
+            aria-label="Select a client story"
+          >
+            <button type="button" class="testimonial-dot active" aria-label="Story 1 of 8" aria-selected="true"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 2 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 3 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 4 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 5 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 6 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 7 of 8"></button>
+            <button type="button" class="testimonial-dot" aria-label="Story 8 of 8"></button>
           </div>
         </div>
       </div>
