@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order Inquiry | Butique & more</title>
+    <meta name="description" content="Request a custom hand-painted dress, saree, or portrait.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">Butique & more</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">The Artist</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="custom-order.html" class="btn-outline active">Inquire</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center reveal-up">
+            <span class="eyebrow">Let's Create</span>
+            <h1>Custom Order Inquiry</h1>
+            <p class="section-subtitle">Please share your vision with us. We will review your request and get back to you to finalize the design, pricing, and timeline.</p>
+        </div>
+    </header>
+
+    <!-- Order Form Section -->
+    <section class="section-padding">
+        <div class="container" style="max-width: 800px;">
+            <div class="glassmorphism reveal-up">
+                <form id="custom-order-form" class="custom-form">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Email Address</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="phone" required placeholder=" ">
+                            <label for="phone">Phone Number / WhatsApp</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Item Type</option>
+                                <option value="saree">Hand-painted Saree</option>
+                                <option value="kurti">Hand-painted Kurti</option>
+                                <option value="suit">Punjabi Suit</option>
+                                <option value="baby">Baby Dress</option>
+                                <option value="portrait">Portrait Painting</option>
+                                <option value="other">Other Custom Artwork</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="idea" rows="5" required placeholder=" "></textarea>
+                        <label for="idea">Describe Your Idea (Themes, concepts, etc.)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="details" rows="3" placeholder=" "></textarea>
+                        <label for="details">Preferred Fabric, Colors & Budget (Optional)</label>
+                    </div>
+
+                    <div class="form-group" style="border-bottom: none; margin-top: 1rem;">
+                        <label style="position: relative; top: 0; font-size: 0.9rem; color: var(--clr-text-main); margin-bottom: 0.5rem; display: block;">Upload Inspiration Images</label>
+                        <input type="file" id="images" multiple accept="image/*" style="border: 1px dashed var(--clr-text-light); padding: 2rem; border-radius: var(--radius-md); background: rgba(255,255,255,0.2);">
+                    </div>
+
+                    <button type="submit" class="btn-primary w-100" style="margin-top: 2rem;">Submit Inquiry</button>
+                    <div class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Butique & more</h2>
+                <p>Creating one-of-a-kind, hand-painted masterpieces that celebrate artistry and individuality.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">The Artist</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="custom-order.html">Request Custom Order</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: contact@butiqueandmore.com</p>
+                <p>WhatsApp: +91 8820988244</p>
+                <p>Location: Jangalpara, PO Magra, Hooghly, West Bengal 712148</p>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Butique & more. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Auto-select category based on URL parameter (e.g. ?category=saree)
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+        if (categoryParam) {
+            const select = document.getElementById('category');
+            if (select) select.value = categoryParam;
+        }
+    </script>
+</body>
+</html>

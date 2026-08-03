@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Works Gallery | Butique & more</title>
+    <meta name="description" content="View our gallery of past hand-painted custom orders.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">Butique & more</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">The Artist</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="custom-order.html" class="btn-outline">Inquire</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center reveal-up">
+            <span class="eyebrow">Portfolio</span>
+            <h1>Past Masterpieces</h1>
+            <p class="section-subtitle">Explore a curated selection of our previous custom orders. Every piece shown was handcrafted specifically for a client and is not for sale.</p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section section-padding">
+        <div class="container">
+
+            <div class="gallery-filters reveal-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sarees">Sarees</button>
+                <button class="filter-btn" data-filter="kurtis">Kurtis</button>
+                <button class="filter-btn" data-filter="suits">Suits</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+            </div>
+
+            <div class="masonry-grid">
+                <div class="gallery-item sarees watermark-container reveal-up">
+                    <img src="public/1.jpeg" alt="Hand painted silk saree" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Lotus Motif Saree</div></div>
+                </div>
+                <div class="gallery-item portraits watermark-container reveal-up">
+                    <img src="public/6.jpeg" alt="Custom Portrait" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Watercolor Portrait</div></div>
+                </div>
+                <div class="gallery-item kurtis watermark-container reveal-up">
+                    <img src="public/7.jpeg" alt="Painted Kurti" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Botanical Kurti</div></div>
+                </div>
+                <div class="gallery-item sarees watermark-container reveal-up">
+                    <img src="public/8.jpeg" alt="Elegant Saree" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Peacock Motif Saree</div></div>
+                </div>
+                <div class="gallery-item suits watermark-container reveal-up">
+                    <img src="public/9.jpeg" alt="Punjabi Suit" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Floral Punjabi Suit</div></div>
+                </div>
+                <div class="gallery-item kurtis watermark-container reveal-up">
+                    <img src="public/10.jpeg" alt="Designer Kurti" loading="lazy">
+                    <div class="item-overlay"><div class="overlay-text">Geometric Pattern Kurti</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip text-center reveal-up">
+        <div class="container">
+            <h2>Inspired? Let's create your custom outfit.</h2>
+            <a href="custom-order.html" class="btn-primary mt-4">Start Your Custom Order</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Butique & more</h2>
+                <p>Creating one-of-a-kind, hand-painted masterpieces that celebrate artistry and individuality.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">The Artist</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="custom-order.html">Request Custom Order</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Butique & more. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918820988244" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
